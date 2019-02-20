@@ -1,0 +1,35 @@
+#NOTE -- If VM1 already exists on New-WinSVR, this script is not necessary.
+
+# Create VM.
+az vm create \
+  --name myVM \
+  --resource-group 66609a43-f0e7-4387-97d6-9d598d6eb818 \
+  --image Win2016Datacenter \
+  --size Standard_DS2_v2 \
+  --location eastus \
+  --admin-username azureuser
+
+
+# Install IIS.
+dism /online /enable-feature /featurename:IIS-WebServerRole
+
+# Set the home page.
+Set-Content `
+  -Path "C:\\inetpub\\wwwroot\\Default.htm" `
+  -Value "<html><body><h2>Welcome to Azure! My name is $($env:computername).</h2></body></html>"
+
+#  Open port 80 (HTTP) through the firewall.
+az vm open-port \
+  --name myVM \
+  --resource-group 66609a43-f0e7-4387-97d6-9d598d6eb818 \
+  --port 80
+
+# Verify Configuration.
+az vm list-ip-addresses \
+  --name myVM \
+  --resource-group 66609a43-f0e7-4387-97d6-9d598d6eb818 \
+  --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
+  --output tsv
+
+
+Set-VMProcessor New-WinSvr -ExposeVirtualizationExtensions $true

@@ -1,0 +1,30 @@
+#Here are the individual PowerShell cmdlets used in the lab:
+
+Install-Module -Name AzureRM -AllowClobber
+
+Import-Module AzureRM
+
+Connect-AzureRmAccount
+
+Get-AzureRmSubscription
+
+Select-AzureRmSubscription -SubscriptionName ‘<SubscriptionName>’  #(Only needed if more than one subscription in the tenant)
+
+#Use PowerShell ISE
+
+Get-Module -ListAvailable -Name Azure*
+
+Add-AzureRmAccount 
+
+Select-AzureRmSubscription -SubscriptionId <Value of the SubscriptionId property>   #(Only needed if more than one subscription in the tenant)
+
+Get-AzureRmResourceProvider
+
+Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
+
+Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute -Location 'East US'
+
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+
+
+

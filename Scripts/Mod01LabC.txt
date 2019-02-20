@@ -1,0 +1,25 @@
+az login
+
+az account show
+
+az account set --subscription "<subscription_name>"
+
+az vm list --query "[?contains(name,'armvm2')].location" --output tsv
+
+az vm list --query "[?contains(name,'armvm2')].hardwareProfile.vmSize" --output tsv
+
+az group create --name mod1c-LabRG --location <location>
+
+az network vnet create --resource-group mod1c-LabRG --name mod1c-LabRG-vnet --address-prefix 10.1.0.0/20 --subnet-name default --subnet-prefix 10.1.0.0/24
+
+az network nsg create --resource-group mod1c-LabRG --name mod1c-vm3-nsg
+
+az network nsg rule create --resource-group mod1c-LabRG -–nsg-name mod1c-vm3-nsg --name default-allow-rdp --protocol tcp --priority 1000 --destination-port-range 3389 --access allow
+
+az network public-ip create --resource-group mod1c-LabRG --name mod1c-vm3-ip
+
+az network nic create --resource-group mod1c-LabRG --name mod1c-vm3-nic --vnet-name mod1c-LabRG-vnet --subnet default --public-ip-address mod1c-vm3-ip --network-security-group mod1c-vm3-nsg
+
+az vm create --resource-group mod1c-LabRG --name mod1c-vm3 --location <location> --nics mod1c-vm3-nic --image win2016datacenter --size <vmsize> --admin-username Student --admin-password Pa55w.rd1234
+
+
