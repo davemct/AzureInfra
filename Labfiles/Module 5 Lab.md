@@ -231,26 +231,20 @@ In this exercise, you will configure the VM1 virtual machine for site recovery. 
 
 ##Task 1 Install Windows Server 2016 Core on VM1
 
-1.  In the browser, navigate to:  https://www.microsoft.com/en-us/evalcenter/
-
-2.  Scroll down and Click Windows Server, and then select Windows Server 2019
-
-3.  Select ISO, and then Continue.  Fill out form as required, and then click Continue.
-
-4.  Select your language, and then click Download.  Save to the Downloads directory.
-
-5.  After the iso download finishes, in The Start menu, go to Administrative Tools, and then **Hyper-V Manager**.
-
-6.  In Hyper-V Manager, double click VM1, and in the Media menu, select **DVD Drive**, and then **Insert Disk**.   In File Explorer, select the downloaded iso.  Now click 
-the **Start** button on the VM1 Virtual Machine Connection window.
-
-7.  Install Windows Server 2019 Core, using all defaults.  Use a Custom installation.
-
-8.  When VM1 boots up after install, it will require you to create an administrator password.  Use **Pa55w.rd**
-
-9.  Close the VM1 Machine Connection Window.
-
 ##Task 2 Failover VM1
+
+1.  Return to the Lab5-Vault blade.  In the Lab5-vault hub menu, select Replicated Items.
+
+2.  Click the three elipses to the right of VM1 and in the context menu, select Test Failover.
+
+3.  The Test Failover deployment process will run in the Notifications area.
+
+4.  Note the Refresh icon in the menu baR FOR VM1.  You can periodically use to see the status of the Test Failover.  Eventually, it will report successfully completed.  Then it will say Cleanup Test Failover pending.  Click this.
+
+5.  Inm the VM1 blade, note the Menu bar item with the checkmark that says Cleanup Test Failover.  Click this, and, in the window that opens, check the box that says Delete Test Failover Virtual Machine.
+
+6.  You have completed the Test Failover.
+
 
 
 
