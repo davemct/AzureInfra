@@ -37,7 +37,7 @@ In this exercise, you will create an two Azure storage accounts. Storage account
 
 	- Subscription: Select your subscription
 	- Resource group:  **Lab4a-RG**
-	- Storage account name: **lab4afilestoreXX**
+	- Storage account name: **lab4ablobstoreXX**
 	- Location: **East US**
 	- Performance: **Standard**
 	- Account kind: **BlobStorage**
