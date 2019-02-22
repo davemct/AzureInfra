@@ -39,7 +39,7 @@ For this lab, you will use a more powerful VM than the one you used in previous 
 
 5. In the Hyper-V Manager console, click the machine name (MAIN-LAB5-VM3) in the treeview on the left and in the **Actions** pane on the right, click **Virtual Switch Manager**.  In the Virtual Switch Manager window, select **Internal** and then click the **Create switch** button.  In the second window, in the **Name** field, type **InternalSwitch** and then click **OK**.
 
-![]Images/VirtualSwitchManager.PNG
+![](Images/VirtualSwitchManager.PNG)
 
 6.  Right-click the machine name (MAIN-LAB5-VM3) again and select **New -> Virtual Machine...** to launch the New Virtual Machine wizard.
 
