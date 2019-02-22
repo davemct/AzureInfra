@@ -260,25 +260,25 @@ In this exercise, you will delete all the resources created during the course of
 
 1. In the Azure portal, navigate to the **Lab5-vault** blade.
 
-1. Click **Replicated items** in the menu on the left side of the blade.
+2. Click **Replicated items** in the menu on the left side of the blade.
 
-1. Click the ellipsis to the right of **VM1** and select **Disable Replication**. Answer the ensuing questions about *why* you're disabling replication, and then click **OK** at the bottom of the blade.
+3. Click the ellipsis to the right of **VM1** and select **Disable Replication**. Answer the ensuing questions about *why* you're disabling replication, and then click **OK** at the bottom of the blade.
 
-1. Close the "Replicated items" blade and return to the "Lab5-vault" blade. Then click **Site Recovery Infrastructure** in the menu on the left side of the blade.
+4. Close the "Replicated items" blade and return to the "Lab5-vault" blade. Then click **Site Recovery Infrastructure** in the menu on the left side of the blade.
 
-1. Click **Hyper-V Hosts** in the menu on the left side of the blade.
+5. Click **Hyper-V Hosts** in the menu on the left side of the blade.
 
-1. Click the ellipsis to the right of **Main-Lab5-VM3** and select **Delete**. When prompted for confirmation, click **OK**.
+6. Click the ellipsis to the right of **Main-Lab5-VM3** and select **Delete**. When prompted for confirmation, click **OK**.
 
 	> DO NOT disregard error messages indicating that **Deleting Hyper-V server** operation failed. Repeat until **Main-Lab5-VM3** is gone.
 
 1. Return to the "Lab5-vault" blade and click **Overview** in the menu on the left side of the blade. Then click **Delete** at the top of the blade. When prompted for confirmation, click **Yes**.
 
-1. Click **Resource groups** in the menu on the left side of the portal.
+7. Click **Resource groups** in the menu on the left side of the portal.
 
-1. Find the resource group named **Lab5-RG**. Click the ellipsis on the right end of the row and select **Delete resource group** from the ensuing menu.
+8. Find the resource group named **Lab5-RG**. Click the ellipsis on the right end of the row and select **Delete resource group** from the ensuing menu.
 
-1. Type the resource-group name into the box labeled TYPE THE RESOURCE GROUP NAME. Then click the **Delete** button at the bottom of the blade.
+9. Type the resource-group name into the box labeled TYPE THE RESOURCE GROUP NAME. Then click the **Delete** button at the bottom of the blade.
 
 	![Deleting the resource group](Images/delete-lab5-rg.png)
 
