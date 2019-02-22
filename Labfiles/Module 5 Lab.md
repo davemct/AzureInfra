@@ -36,13 +36,16 @@ For this lab, you will use a more powerful VM than the one you used in previous 
 	```
 
 4. Reconnect to the virtual machine. Click the Windows **Start** button. Then click **Windows Administrative Tools**, and underneath that, click **Hyper-V Manager** to launch the Windows Hyper-V Manager.
-5. In the Hyper-V Manager console, click the machine name (MAIN-LAB5-VM3) in the treeview on the left and in the Action menu on the right, click Virtual Switch Manager.  In the Virtual Switch Manager window, select Internal and then click the create switch button.  In the second window, in the Name field, type InternalSwitch and then click OK.
+
+5. In the Hyper-V Manager console, click the machine name (MAIN-LAB5-VM3) in the treeview on the left and in the **Actions** pane on the right, click **Virtual Switch Manager**.  In the Virtual Switch Manager window, select **Internal** and then click the **Create switch** button.  In the second window, in the **Name** field, type **InternalSwitch** and then click **OK**.
+
+![]Images/VirtualSwitchManager.PNG
 
 6.  Right-click the machine name (MAIN-LAB5-VM3) again and select **New -> Virtual Machine...** to launch the New Virtual Machine wizard.
 
 7. Click **Next**. In the "Specify Name and Location" page, name the virtual machine **VM1**, and then click **Next**.
 
-8. Accept the defaults on all other pages except the Configure Networking page, where you will select the No Connection dropdown and select InternalSwitch. Then click **Finish** on the Summary page.
+8. Accept the defaults on all other pages except the **Configure Networking** page, where you will change the **No Connection** dropdown and select **InternalSwitch**. Then click **Finish** on the Summary page.
 
 9. Confirm that VM1 appears in the list of virtual machines hosted on MAIN-LAB5-VM3.
 
