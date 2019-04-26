@@ -63,7 +63,7 @@ docker ps -a –no-trunc
 
 6.	In the GABCContlabcrxx blade, in the Hub menu, click **Access keys**.  Note the Registry name, Login server, Username, and Password.  Note the copy button by the password.  Click the copy button beside the top password.
 
-![](Images/CreateContainerReg.PNG)
+![](Images/CreateContainerReg.png)
  
 7.	Right-click the Start menu and select **Command Prompt (Admin)**, and type the following commands, pressing Enter after each (ensure you use your student number in place of XX in each command):
 
