@@ -55,7 +55,7 @@ docker ps -a –no-trunc
 2.	Click **+Create a resource**.
 3.	In the Azure Marketplace, in the Search bar, type, **Container Registry**.  Then in the far-right blade, click **Create**.
 
-![](Images\ContainerReg.PNG)
+![](Images/ContainerReg.PNG)
 
 4.	In the Create a container registry blade, for the name, use **GABCContLabcrXX** (where XX is your assigned student number).  For the Resource Group, use GABC-RG2, for the location, choose East US, **Enable** Admin User, and for the SKU, choose **Basic**, and then click **Create**.
 
@@ -63,7 +63,7 @@ docker ps -a –no-trunc
 
 6.	In the GABCContlabcrxx blade, in the Hub menu, click **Access keys**.  Note the Registry name, Login server, Username, and Password.  Note the copy button by the password.  Click the copy button beside the top password.
 
-![](Images\CreateContainerReg.PNG)
+![](Images/CreateContainerReg.PNG)
  
 7.	Right-click the Start menu and select **Command Prompt (Admin)**, and type the following commands, pressing Enter after each (ensure you use your student number in place of XX in each command):
 
