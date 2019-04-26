@@ -55,7 +55,7 @@ docker ps -a –no-trunc
 2.	Click **+Create a resource**.
 3.	In the Azure Marketplace, in the Search bar, type, **Container Registry**.  Then in the far-right blade, click **Create**.
 
-![](Labfiles\Images\ContainerReg.PNG)
+![](\Labfiles\Images\ContainerReg.PNG)
 
 4.	In the Create a container registry blade, for the name, use **GABCContLabcrXX** (where XX is your assigned student number).  For the Resource Group, use GABC-RG2, for the location, choose East US, **Enable** Admin User, and for the SKU, choose **Basic**, and then click **Create**.
 
