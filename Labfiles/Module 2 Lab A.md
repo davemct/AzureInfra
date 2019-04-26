@@ -22,7 +22,7 @@ In this exercise, you will use the Azure portal to create a pair of virtual netw
 	- Name: **GABCVNet1**
 	- Address space: **10.1.0.0/16**
 	- Subscription: Select your subscription
-	- Resource group: Create a new resource group named **lab2a-RG**
+	- Resource group: Create a new resource group named **GABC-RG1**
 	- Location: **US East**
 	- Subnet name: **Subnet1**
 	- Subnet address range: **10.1.0.0/24**
@@ -37,7 +37,7 @@ In this exercise, you will use the Azure portal to create a pair of virtual netw
 	- Name: **GABCVNet2**
 	- Address space: **10.2.0.0/16**
 	- Subscription: Select your subscription
-	- Resource group: **GABC-RG1** (Create new)
+	- Resource group: **GABC-RG1**
 	- Location: The same Azure region you chose for the first virtual network
 	- Subnet name: **Subnet1**
 	- Subnet address range: **10.2.0.0/24**
