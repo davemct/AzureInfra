@@ -119,7 +119,7 @@ You are now running a virtual machine inside a virtual machine. That's why you c
 	az vm image list-skus --location "<location>" --publisher Canonical --offer UbuntuServer --output table
 	```
 
-	![Ubuntu images](Images/list-ubuntu-images.png)
+	![Ubuntu images](Labfiles/Images/list-ubuntu-images.png)
 
 1. Confirm that **16.04.0-LTS** appears in the list of Ubuntu images. If it doesn't, then pick another one and use it in place of **16.04.0-LTS** in Step 10.
 
