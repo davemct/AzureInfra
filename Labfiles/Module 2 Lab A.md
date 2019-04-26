@@ -1,12 +1,9 @@
-# Module 2: Azure Virtual Network service and components
+# Global Azure Bootcamp 2019: Azure Virtual Network service and components
 
-### Lab A: Creating and configuring virtual networks
+### Demo/Lab: Implementing Azure Resource Manager Virtual Networks By Using The Azure Portal
 
 In this lab, you will use the Azure portal to create a pair of Azure virtual networks (VNets) and configure them for VNet peering. Then you will create new virtual machines and deploy them into those networks.
 
-```
-Perform the exercises in this lab in the Windows Server 2016 VM that you created in Module 1, Lab A.
-```
 
 ## Exercise 1 - Create virtual networks
 
@@ -22,7 +19,7 @@ In this exercise, you will use the Azure portal to create a pair of virtual netw
 
 1. Enter the following settings into the "Create virtual network" blade, and then click **Create**:
 
-	- Name: **lab2aVNet1**
+	- Name: **GABCVNet1**
 	- Address space: **10.1.0.0/16**
 	- Subscription: Select your subscription
 	- Resource group: Create a new resource group named **lab2a-RG**
@@ -37,10 +34,10 @@ In this exercise, you will use the Azure portal to create a pair of virtual netw
 
 1.  Enter the following settings for the virtual network, and then click **Create**:
 
-	- Name: **lab2aVNet2**
+	- Name: **GABCVNet2**
 	- Address space: **10.2.0.0/16**
 	- Subscription: Select your subscription
-	- Resource group: **Lab2a-RG**
+	- Resource group: **GABC-RG1** (Create new)
 	- Location: The same Azure region you chose for the first virtual network
 	- Subnet name: **Subnet1**
 	- Subnet address range: **10.2.0.0/24**
@@ -51,21 +48,21 @@ Wait for both VNets to be deployed before proceeding. Deployment should take les
 
 ### Task 2: Configure VNet peering using the Azure portal
 
-1. In the Azure portal, open the resource group named **lab2a-RG**. This is the resource group that contains the virtual networks created in the previous task.
+1. In the Azure portal, open the resource group named **GABC-RG1**. This is the resource group that contains the virtual networks created in the previous task.
 
-1. Click **lab2aVNet1**.
+1. Click **GABCVNet1**.
 
 1. Click **Peerings** in the menu on the left side of the blade. Then click **+ Add** at the top of the blade.
 
-1. In the "Add peering" blade, enter the name **lab2aVNet1-lab2aVNet2**. Make sure "Virtual network deployment model" is set to **Resource manager** and "Allow virtual network access" is **Enabled**. Select **lab2aVNet2 (lab2a-RG)** from the list of virtual networks. Then click **OK**.
+1. In the "Add peering" blade, enter the name **GABCVNet1-GABCVNet2**. Make sure "Virtual network deployment model" is set to **Resource manager** and "Allow virtual network access" is **Enabled**. Select **GABCVNet2 (GABC-RG1)** from the list of virtual networks. Then click **OK**.
 
 	![Adding a network peering](Images/add-peering.png)
 
-1. Return to the **lab2a-RG** resource group and click **lab2aVNet2**.
+1. Return to the **GABC-RG1** resource group and click **GABCVNet2**.
 
 1. Click **Peerings** in the menu on the left side of the blade. Then click **+ Add** at the top of the blade.
 
-1. In the "Add peering" blade, enter the name **lab2aVNet2-lab2aVNet1**. Make sure "Virtual network deployment model" is set to **Resource manager** and "Allow virtual network access" is **Enabled**. Select **lab2aVNet1 (lab2a-RG)** from the list of virtual networks. Then click **OK**.
+1. In the "Add peering" blade, enter the name **GABCVNet2-GABCVNet1**. Make sure "Virtual network deployment model" is set to **Resource manager** and "Allow virtual network access" is **Enabled**. Select **GABCVNet1 (GABC-RG1)** from the list of virtual networks. Then click **OK**.
 
 Upon completing this exercise, you have created two Azure virtual networks and configured VNet peering between them using the Azure portal
 
@@ -82,8 +79,8 @@ In this exercise, you will create two VMs and add one to each of the virtual net
 1. Enter the following settings in the "Basics" tab. Then click the **Next : Disks >** button at the bottom of the page:
 
 	- Subscription: Select your subscription
-	- Resource group: **lab2a-RG**
-	- Virtual machine name: **Lab2a-VM1**
+	- Resource group: **GABC-RG1**
+	- Virtual machine name: **GABC-VM1**
 	- Region: Select an Azure region where you have the ability to provision Azure VMs. If in doubt, choose **East US**.
 	- Availability options: default
 	- Image: **Windows Server 2016 Datacenter**
@@ -99,9 +96,9 @@ In this exercise, you will create two VMs and add one to each of the virtual net
 
 1. Enter the following settings in the "Networking" tab. Then click the **Review + create** button:
 
-	- Virtual network: **lab2aVNet1**
+	- Virtual network: **GABCVNet1**
 	- Subnet: **Subnet1 (10.1.0.0/24)**
-	- Public IP address: **(new) Lab2a-VM1-ip**
+	- Public IP address: **(new) GABC-VM1-ip**
 	- Network security group: **Basic**
 	- Public inbound ports: **Allow selected ports**
 	- Selected inbound ports: **RDP**
@@ -110,7 +107,7 @@ In this exercise, you will create two VMs and add one to each of the virtual net
 
 1. Review the settings and make sure validation is successful. Then click the **Create** button at the bottom of the blade to begin the deployment.
 
-1. **Repeat steps 1 through 6** to deploy a second virtual machine that is identical to the first. Name this VM **Lab2a-VM2**, and place it in the **lab2aVNet2** VNet.
+1. **Repeat steps 1 through 6** to deploy a second virtual machine that is identical to the first. Name this VM **GABC-VM2**, and place it in the **GABCVNet2** VNet.
 
 Wait for both VMs to finish deploying before proceeding to the next task.
 
@@ -118,13 +115,13 @@ Wait for both VMs to finish deploying before proceeding to the next task.
 
 1. Click **Virtual machines** in the menu on the left side of the Azure portal.
 
-1. In the "Virtual machines" blade, click **Lab2a-VM2**.
+1. In the "Virtual machines" blade, click **GABC-VM2**.
 
 1. In the menu on the left side of the blade, click **Networking**.
 
-1. Copy the VM's private IP address to the clipboard.
+1. Copy the VM's **private** IP address to the clipboard.
 
-1. Return to the "Virtual machines" blade and click **Lab2a-VM1**.
+1. Return to the "Virtual machines" blade and click **GABC-VM1**.
 
 1. Click **Connect** at the top of the blade. Then click **Download RDP File**. Open the .rdp file and remote in to the VM.
 
@@ -135,7 +132,7 @@ Wait for both VMs to finish deploying before proceeding to the next task.
 
 	Answer yes when asked to confirm that you wish to connect.
 
-11. In the RDP desktop for the **Lab2a-VM1** virtual machine, right-click the Windows logo in the lower-left corner, and then click **Run**.
+11. In the RDP desktop for the **GABC-VM1** virtual machine, right-click the Windows logo in the lower-left corner, and then click **Run**.
 
 12. Type the following command into the text box, replacing `<vm2-ip>` with the IP address on the clipboard. Then click **OK** to execute the command.
 
@@ -154,5 +151,5 @@ Wait for both VMs to finish deploying before proceeding to the next task.
 
 ### Task 3: Delete the resource group
 
-Finish up by deleting the **lab2a-RG** resource group using the same procedure you used to delete resource groups in Module 1, Lab D. You won't be using these VMs or VNets again, so there is no need to keep them around and incur unnecessary charges to your Azure subscription.
+Finish up by deleting the **GABC-RG1** resource group using the same procedure you used to delete resource groups in Module 1, Lab D. You won't be using these VMs or VNets again, so there is no need to keep them around and incur unnecessary charges to your Azure subscription.
 
