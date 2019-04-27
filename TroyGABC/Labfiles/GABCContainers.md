@@ -28,6 +28,22 @@ In this lab, you will learn how to migrate apps that run on-premises in Docker c
 3.  In Sever Manager, Local Server, turn off the **IE Enhanced Security Configuration** for Administrators.
 4. 	Install the Azure CLI as follows:  
 
+## Exercise 1 - Install the Azure CLI
+
+In this exercise, you will download an installer for the Azure CLI and use it to install the CLI in the VM in which you are working these labs.
+
+1. Open a browser in the VM and navigate to https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest.
+
+1. Click the **Download the MSI installer** button to download the installer for the Azure CLI. Then run the installer. Accept any terms and conditions presented to you.
+
+1. Restart the VM, and then connect to it again using Remote Desktop.
+
+1. In the VM, launch a Windows Command Prompt as administrator. Then execute the following command to log in to Azure:
+
+	```
+	az login
+	```
+
 >Note:  You no longer have to restart the computer for Azure CLI to load.
 
 ## Exercise 2  Create local docker image
